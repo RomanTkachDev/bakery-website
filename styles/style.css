@@ -314,6 +314,32 @@ address {
   font-weight: 300;
 }
 
+/* Carousel */
+
+.carousel-button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid var(--color-primary-dark);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.carousel-arrow {
+  width: 16px;
+  height: 16px;
+  rotate: 180deg;
+  transition: 0.3s ease;
+}
+
+.carousel-button:hover .carousel-arrow {
+  scale: 1.2;
+}
+
 /* Contacts section */
 
 .contacts-title {
@@ -326,6 +352,17 @@ address {
   font-size: 16px;
   font-weight: 300;
   text-decoration: none;
+}
+
+.adress-icon {
+  color: var(--color-primary-light);
+  width: 32px;
+  height: 32px;
+}
+
+.adress-icon:hover {
+  color: var(--color-brand-normal);
+  cursor: pointer;
 }
 
 .adress-link:hover {
