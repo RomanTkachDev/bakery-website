@@ -368,6 +368,10 @@ address {
   margin-bottom: 16px;
 }
 
+.contacts-section {
+  padding-bottom: 96px;
+}
+
 .contact-container {
   display: flex;
   gap: 32px;
@@ -375,9 +379,23 @@ address {
 
 .contact-map {
   flex-shrink: 0;
+  border-radius: 16px;
 }
 
 /* Footer */
+
+.footer-container {
+  display: flex;
+}
+
+.footer-nav {
+  flex-basis: 50%;
+}
+
+.footer-adress {
+  flex-basis: 50%;
+}
+
 .adress-link {
   color: var(--color-primary-light);
   font-size: 16px;
