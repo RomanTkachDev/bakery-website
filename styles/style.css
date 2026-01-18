@@ -243,6 +243,20 @@ address {
 
 /* Chefs section */
 
+.chefs-list {
+  display: flex;
+  gap: 30px;
+}
+
+.chefs-item {
+  flex-basis: calc((100% - 30px) / 2);
+}
+
+.chefs-card {
+  display: flex;
+  gap: 30px;
+}
+
 .chefs-title {
   max-width: 520px;
   margin: 0 auto 80px;
@@ -270,11 +284,18 @@ address {
 
 .chef-photo {
   border-radius: 4px 4px 4px 200px;
-  box-shadow: -16px 16px 0px 0px var(--color-primary-light),
+  box-shadow:
+    -16px 16px 0px 0px var(--color-primary-light),
     -16px 16px 0px 2px var(--color-secondary-dark);
 }
 
 /* Formats section */
+
+.formats-container {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
 
 .formats-list {
   display: flex;
@@ -327,6 +348,7 @@ address {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .carousel-arrow {
@@ -346,12 +368,22 @@ address {
   margin-bottom: 16px;
 }
 
+.contact-container {
+  display: flex;
+  gap: 32px;
+}
+
+.contact-map {
+  flex-shrink: 0;
+}
+
 /* Footer */
 .adress-link {
   color: var(--color-primary-light);
   font-size: 16px;
   font-weight: 300;
   text-decoration: none;
+  flex: 2;
 }
 
 .adress-icon {
