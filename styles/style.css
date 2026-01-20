@@ -34,7 +34,9 @@
 
 /* Base\Global */
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -56,6 +58,10 @@ h5,
 h6,
 p {
   margin-top: 0;
+}
+
+a {
+  display: inline-block;
 }
 
 ul {
@@ -245,7 +251,8 @@ address {
 
 .chefs-list {
   display: flex;
-  gap: 30px;
+  gap: 40px 30px;
+  flex-wrap: wrap;
 }
 
 .chefs-item {
@@ -260,6 +267,14 @@ address {
 .chefs-title {
   max-width: 520px;
   margin: 0 auto 80px;
+}
+
+.chef-text p {
+  margin-bottom: 24px;
+}
+
+.chef-text p:last-child {
+  margin-bottom: 0;
 }
 
 .chef-title {
@@ -384,15 +399,29 @@ address {
 
 /* Footer */
 
+.footer {
+  padding: 32px 0;
+  background-image: url(/images/footer-background.png);
+  background-color: var(--color-primary-dark);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .footer-container {
   display: flex;
+  gap: 20px;
 }
 
-.footer-nav {
-  flex-basis: 50%;
-}
-
+.footer-nav,
 .footer-adress {
+  flex-basis: 50%;
+  display: flex;
+  gap: 20px;
+}
+
+.footer-logo,
+.footer-menu {
   flex-basis: 50%;
 }
 
@@ -402,6 +431,11 @@ address {
   font-weight: 300;
   text-decoration: none;
   flex: 2;
+}
+
+.address-list,
+.address-info {
+  flex-basis: 50%;
 }
 
 .adress-icon {
@@ -421,12 +455,4 @@ address {
 
 .adress-copyright {
   font-size: 14px;
-}
-
-.footer {
-  background-image: url(/images/footer-background.png);
-  background-color: var(--color-primary-dark);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
