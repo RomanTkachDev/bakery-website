@@ -1,90 +1,10 @@
-@font-face {
-  font-display: swap;
-  font-family: "Poppins";
-  font-weight: 300;
-  src: url("../fonts/poppins-v24-latin-300.woff2") format("woff2");
-}
-@font-face {
-  font-display: swap;
-  font-family: "Poppins";
-  font-weight: 400;
-  src: url("../fonts/poppins-v24-latin-regular.woff2") format("woff2");
-}
-@font-face {
-  font-display: swap;
-  font-family: "Poppins";
-  font-weight: 600;
-  src: url("../fonts/poppins-v24-latin-600.woff2") format("woff2");
-}
-@font-face {
-  font-display: swap;
-  font-family: "Poppins";
-  font-weight: 900;
-  src: url("../fonts/poppins-v24-latin-900.woff2") format("woff2");
-}
-
-:root {
-  --color-brand-normal: #819b57;
-  --color-brand-dark: #465929;
-  --color-primary-light: #faf4ea;
-  --color-primary-dark: #31261a;
-  --color-brand-light: #cfcfbc;
-  --color-secondary-dark: #a18268;
-}
-
-/* Base\Global */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  color: var(--color-primary-dark);
-  background-color: var(--color-primary-light);
-  font-family: "Poppins", "Cambria Math", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.5;
-  margin: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin-top: 0;
-}
-
-a {
-  display: inline-block;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-address {
-  font-style: normal;
-}
+@import "./utils/fonts";
+@import "./utils/variables";
+@import "./base";
+@import "./utils/utils";
 
 .section {
   padding: 48px 0;
-}
-
-.visually-hidden {
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
 }
 
 .container {
@@ -94,99 +14,13 @@ address {
   padding: 0 24px;
 }
 
-/* Buttons */
+@import "./components/buttons";
 
-.button {
-  padding: 16px 32px;
-  background-color: var(--color-brand-normal);
-  color: var(--color-primary-light);
-  border: 2px solid var(--color-brand-normal);
-  border-radius: 8px;
-  font-weight: 600;
-}
+@import "./components/links";
 
-.button:hover {
-  background-color: transparent;
-  color: var(--color-brand-dark);
-  cursor: pointer;
-}
+@import "./components/header";
 
-.button:active {
-  background-color: var(--color-brand-normal);
-  border-color: var(--color-brand-normal);
-}
-
-/* Link */
-
-.link {
-  color: var(--color-primary-light);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.link:hover {
-  color: var(--color-brand-normal);
-  cursor: pointer;
-}
-
-/* Header */
-
-.header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding-top: 32px;
-}
-.header-container {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-
-.header-nav {
-  display: flex;
-  align-items: center;
-  flex-grow: 1;
-  gap: 40px;
-}
-
-.menu {
-  display: flex;
-  justify-content: center;
-  flex-grow: 1;
-  gap: 64px;
-}
-
-/* Hero section */
-
-.hero-section {
-  padding: 256px 0;
-  background-image:
-    linear-gradient(
-      102.76deg,
-      rgba(18, 18, 17, 0.78) 2.03%,
-      rgba(18, 18, 17, 0.6) 58.46%,
-      rgba(18, 18, 17, 0) 90.36%
-    ),
-    url(/images/hero-section-background.jpg);
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: cover;
-}
-
-.hero-title {
-  color: var(--color-primary-light);
-  text-align: center;
-  text-transform: capitalize;
-  font-size: 128px;
-  font-weight: 900;
-  margin-bottom: 0;
-}
-
-.hero-title .accent {
-  color: var(--color-brand-normal);
-}
+@import "./components/hero-section";
 
 /* Advantages section */
 
@@ -338,6 +172,8 @@ address {
 }
 
 .format-card {
+  position: relative;
+  display: flex;
   border-radius: 16px;
   border: 1px solid lightgray; /* remove */
   padding: 24px;
@@ -349,10 +185,21 @@ address {
   );
   height: 444px;
   transition: transform 0.3s;
+  flex-direction: column;
+  justify-content: end;
 }
 
 .format-card:hover {
   transform: scale(1.05);
+}
+
+.format-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
 .formats-title {
@@ -363,11 +210,13 @@ address {
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 80px;
+  color: var(--color-primary-light);
 }
 
 .format-text {
   font-size: 14px;
   font-weight: 300;
+  color: var(--color-primary-light);
 }
 
 /* Carousel */
