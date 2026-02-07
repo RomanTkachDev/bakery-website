@@ -1,24 +1,25 @@
 .chefs-card {
   display: flex;
   gap: 30px;
-}
 
-.chefs-title {
-  margin: 0 auto 80px;
-  position: relative;
-}
+  &__title {
+    margin: 0 auto 16px;
+    position: relative;
+    font-size: 40px;
+  }
 
-.chef-text p {
-  margin-bottom: 24px;
-}
+  &__text {
+    margin-bottom: 24px;
 
-.chef-text p:last-child {
-  margin-bottom: 0;
-}
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 
-.chef-photo {
-  border-radius: 4px 4px 4px 200px;
-  box-shadow:
-    -16px 16px 0px 0px var(--color-primary-light),
-    -16px 16px 0px 2px var(--color-secondary-dark);
+  &__photo {
+    border-radius: 4px 4px 4px 200px;
+    box-shadow:
+      -16px 16px 0px 0px var(--color-primary-light),
+      -16px 16px 0px 2px var(--color-secondary-dark);
+  }
 }
